@@ -1,0 +1,24 @@
+syntax="proto3";
+
+package grpcForRedis;
+
+service RedisOp{
+    rpc GetAuth (Tuid ) returns (TaInfo){}
+    rpc SetAuthInfo(ItemInfo) returns (Tuid){} 
+}
+
+message Tuid {
+    string Uid = 1;
+}
+
+message TaInfo {
+    string Name = 1;
+    string Passwd = 2;
+}
+
+message ItemInfo {
+    string Name = 1;
+    string Passwd = 2;
+    int64 Duration = 3;
+}
+
